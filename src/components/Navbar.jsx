@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { Menu, X, Camera } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { SITE } from '../data/site.js'
 import { useLang } from '../i18n/LanguageContext.jsx'
+import logoImg from '../assets/logo-b64.js'
 
 function scrollTo(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -75,9 +76,11 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
         <button onClick={() => go('accueil')} className="flex items-center gap-2.5 text-start">
-          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-gold/60 bg-ink-soft">
-            <Camera className="h-5 w-5 text-gold" />
-          </span>
+          <img
+            src={logoImg}
+            alt="Studio Salhi — logo"
+            className="h-10 w-auto rounded-md border border-gold/40 object-cover"
+          />
           <span className="leading-tight">
             <span className="block font-display text-lg font-semibold tracking-wide text-white">
               {SITE.name}
