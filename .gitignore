@@ -1,0 +1,15 @@
+# Dépendances
+node_modules/
+
+# Build de production (régénérable avec `npm run build`)
+dist/
+
+# Captures de vérification locales
+preview/
+
+# Fichiers de prévisualisation / archives ponctuelles
+*.zip
+studio-salhi-preview.html
+
+# Système
+.DS_Store
