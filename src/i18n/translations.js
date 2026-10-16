@@ -81,8 +81,8 @@ export const STRINGS = {
         },
         {
           key: 'design',
-          title: 'ديزاين للطباعة',
-          text: 'تصاميم احترافية ببرنامجي Photoshop وIllustrator: بطاقات الزيارة، المنشورات والإعلانات، الملصقات، الشعارات، ودعوات الأفراح والمناسبات.',
+          title: 'الطباعة والإشهار',
+          text: 'تصميم وطباعة بجودة عالية: بطاقات الزيارة، اللافتات الإشهارية، الملصقات، ودعوات الأفراح والمناسبات.',
         },
       ],
     },
@@ -382,7 +382,7 @@ export const STRINGS = {
         { key: 'drone', title: 'Drone & Vidéo', text: 'Films de mariage, teasers pour les réseaux sociaux et vues aériennes spectaculaires par drone.' },
         { key: 'idphotos', title: 'Photos d’identité', text: 'Photos scolaires, CIN, passeport, permis de conduire et visas pour tous les pays du monde.' },
         { key: 'ecrivain', title: 'Écrivain public', text: 'Rédaction et impression de documents administratifs, CV, lettres et demandes.' },
-        { key: 'design', title: 'Design print', text: "Designs professionnels sous Photoshop et Illustrator : cartes de visite, affiches et publicités, posters, logos, invitations de mariages et d'événements." },
+        { key: 'design', title: 'Impression & Publicité', text: 'Conception et impression haute qualité : cartes de visite, banderoles publicitaires, affiches et invitations de mariages et d’événements.' },
       ],
     },
     eventTypes: [
