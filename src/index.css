@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #c9a227;
+  --color-gold-light: #e6c964;
+  --color-gold-dark: #9a7a1c;
+  --color-ink: #0b0a08;
+  --color-ink-soft: #14120e;
+  --font-display: "Playfair Display", "Georgia", serif;
+  --font-body: "Manrope", system-ui, -apple-system, sans-serif;
+  /* Polices arabes — appliquées automatiquement quand lang="ar" */
+  --font-display-ar: "Aref Ruqaa", "Amiri", "Georgia", serif;
+  --font-body-ar: "Cairo", "Tajawal", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: #e7e5e4;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Bascule typographique arabe : dès que <html lang="ar">,
+   les utilitaires font-display / font-body utilisent les
+   polices arabes, sans toucher aux composants. ── */
+html[lang="ar"] .font-display {
+  font-family: var(--font-display-ar);
+}
+html[lang="ar"] .font-body,
+html[lang="ar"] body {
+  font-family: var(--font-body-ar);
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: #0b0a08;
+}
+
+/* Fin filet doré sous les titres de section */
+.gold-rule {
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  height: 1px;
+}
