@@ -2,9 +2,12 @@ import { CalendarCheck } from 'lucide-react'
 import { useLang } from '../i18n/LanguageContext.jsx'
 import Eyebrow from './Eyebrow.jsx'
 import SectionDivider from './SectionDivider.jsx'
-// ?inline → la photo est intégrée en base64 dans le JS : le build reste
-// un seul fichier index.html autonome (requis pour le déploiement).
-import radwanePhoto from '../assets/radwane.jpg?inline'
+// Photo intégrée en base64 découpée (contourne la limite GitHub) :
+// les 3 chunks sont réassemblés ici, le build reste un seul fichier.
+import p1 from '../assets/radwane-b64-1.js'
+import p2 from '../assets/radwane-b64-2.js'
+import p3 from '../assets/radwane-b64-3.js'
+const radwanePhoto = 'data:image/jpeg;base64,' + p1 + p2 + p3
 
 function scrollTo(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
