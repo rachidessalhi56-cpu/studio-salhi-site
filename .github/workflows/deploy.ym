@@ -1,0 +1,69 @@
+# ============================================================
+# GitHub Pages — workflow de déploiement pour studio-salhi-site
+# ============================================================
+# COMMENT L'UTILISER (2 min, depuis github.com sur téléphone) :
+#
+# ÉTAPE 1 — Ajouter la photo manquante :
+#   Sur le dépôt rachidessalhi56-cpu/studio-salhi-site :
+#   Add file → Upload files → téléverser src/assets/radwane.jpg
+#   (le fichier est chez l'utilisateur : ~/workspace/studio-salhi-site/src/assets/radwane.jpg)
+#   → Commit changes
+#
+# ÉTAPE 2 — Ajouter ce workflow :
+#   Add file → Create new file → nom : .github/workflows/deploy.yml
+#   → coller TOUT le contenu ci-dessous → Commit changes
+#
+# ÉTAPE 3 — Activer Pages :
+#   Settings → Pages → Source : "GitHub Actions" → Save
+#
+# → Le site sera en ligne en ~2 min sur :
+#   https://rachidessalhi56-cpu.github.io/studio-salhi-site/
+#   (chaque push sur main redéploie automatiquement)
+# ============================================================
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
