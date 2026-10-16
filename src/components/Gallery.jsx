@@ -10,18 +10,21 @@ import SectionDivider from './SectionDivider.jsx'
 //  balise <img src="..." /> (voir README, section Personnalisation).
 // ─────────────────────────────────────────────────────────────
 const SLOTS = [
-  { key: 'mariage', tone: 'from-amber-950/80 via-ink-soft to-ink' },
-  { key: 'fiancailles', tone: 'from-stone-800/70 via-ink-soft to-ink' },
-  { key: 'soiree', tone: 'from-yellow-950/60 via-ink-soft to-ink' },
-  { key: 'evenement', tone: 'from-neutral-800/70 via-ink-soft to-ink' },
-  { key: 'seance', tone: 'from-amber-900/60 via-ink-soft to-ink' },
-  { key: 'drone', tone: 'from-stone-900/80 via-ink-soft to-ink' },
+  { key: 'fetes', tone: 'from-amber-950/80 via-ink-soft to-ink' },
+  { key: 'seance', tone: 'from-stone-800/70 via-ink-soft to-ink' },
+  { key: 'drone', tone: 'from-yellow-950/60 via-ink-soft to-ink' },
+  { key: 'idphotos', tone: 'from-neutral-800/70 via-ink-soft to-ink' },
+  { key: 'evenements', tone: 'from-amber-900/60 via-ink-soft to-ink' },
+  { key: 'design', tone: 'from-stone-900/80 via-ink-soft to-ink' },
 ]
 
 export default function Gallery() {
   const { t } = useLang()
-  // Libellés des emplacements = libellés des types d'événement traduits
-  const labelFor = (key) => t.eventTypes.find((e) => e.key === key)?.label || key
+  // Libellés des emplacements : types d'événement, sinon titres des services
+  const labelFor = (key) =>
+    t.eventTypes.find((e) => e.key === key)?.label ||
+    t.services.items.find((s) => s.key === key)?.title ||
+    key
 
   return (
     <section id="galerie" className="scroll-mt-24 bg-ink py-20">
