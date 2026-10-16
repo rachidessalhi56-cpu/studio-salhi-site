@@ -50,19 +50,9 @@ export const STRINGS = {
       sub: 'كلّ مناسبة فريدة من نوعها. نُكيِّف نظرتنا ومعدّاتنا مع قصّتكم، لنمنحكم صوراً تُشبهكم.',
       items: [
         {
-          key: 'mariage',
-          title: 'الأعراس',
-          text: 'من التحضيرات إلى السهرة، نروي قصّة يومكم الكبير بسرّية وعاطفة.',
-        },
-        {
-          key: 'fiancailles',
-          title: 'الخطوبة',
-          text: 'سحر خطوبتكم، نلتقطه في صور طبيعية مليئة بالحنان.',
-        },
-        {
-          key: 'soirees',
-          title: 'السهرات الخاصّة',
-          text: 'أعياد الميلاد، حفلات الختان، الاستقبالات: حضور هادئ لذكريات متألّقة.',
+          key: 'fetes',
+          title: 'الحفلات والأعراس',
+          text: 'الأعراس، الخطوبة، أعياد الميلاد وحفلات الختان: نرافق فرحتكم من التحضيرات إلى السهرة.',
         },
         {
           key: 'evenements',
@@ -80,9 +70,14 @@ export const STRINGS = {
           text: 'أفلام الأعراس، مقاطع لمواقع التواصل، ولقطات جوّية مذهلة بالدرون.',
         },
         {
+          key: 'idphotos',
+          title: 'صور التعريف',
+          text: 'صور مدرسية، البطاقة الوطنية، جواز السفر، رخصة السياقة، وتأشيرات جميع دول العالم.',
+        },
+        {
           key: 'ecrivain',
           title: 'كاتب عمومي',
-          text: 'صياغة وطباعة الوثائق الإدارية، السير الذاتية، الرسائل والطلبات، وصور الهوية.',
+          text: 'صياغة وطباعة الوثائق الإدارية، السير الذاتية، الرسائل والطلبات.',
         },
         {
           key: 'design',
@@ -92,12 +87,11 @@ export const STRINGS = {
       ],
     },
     eventTypes: [
-      { key: 'mariage', label: 'زفاف' },
-      { key: 'fiancailles', label: 'خطوبة' },
-      { key: 'soiree', label: 'سهرة خاصّة' },
+      { key: 'fetes', label: 'حفل / زفاف (الخطوبة مشمولة)' },
       { key: 'evenement', label: 'مناسبة' },
       { key: 'seance', label: 'جلسة تصوير' },
       { key: 'drone', label: 'فيديو ودرون' },
+      { key: 'idphotos', label: 'صور التعريف' },
       { key: 'autre', label: 'أخرى' },
     ],
     gallery: {
@@ -191,7 +185,7 @@ export const STRINGS = {
     contact: {
       eyebrow: 'اتصل بنا',
       title: 'لنتحدّث عن مشروعكم',
-      zoneDetail: 'مقرّنا في العطاوية، ونتنقّل في جميع أنحاء المغرب لمناسباتكم.',
+      zoneDetail: 'مقرّنا في تجزئة الزيتون رقم 221، العطاوية — ونتنقّل في جميع أنحاء المغرب لمناسباتكم.',
       waHello: 'مرحباً استوديو الصالحي، أودّ معلومات.',
       cards: [
         { key: 'phone', title: 'الهاتف', cta: 'اتصل' },
@@ -382,23 +376,21 @@ export const STRINGS = {
       title: 'Un savoir-faire complet',
       sub: 'Chaque événement est unique. Nous adaptons notre regard et notre équipement à votre histoire, pour des images qui vous ressemblent.',
       items: [
-        { key: 'mariage', title: 'Mariage', text: 'Du préparatif à la soirée, nous racontons l’histoire de votre grand jour avec discrétion et émotion.' },
-        { key: 'fiancailles', title: 'Fiançailles', text: 'La magie de vos fiançailles, capturée dans des images naturelles et pleines de tendresse.' },
-        { key: 'soirees', title: 'Soirées privées', text: 'Anniversaires, baptêmes, réceptions : une présence discrète pour des souvenirs éclatants.' },
+        { key: 'fetes', title: 'Fêtes & Mariages', text: 'Mariages, fiançailles, anniversaires, baptêmes : nous accompagnons votre joie des préparatifs jusqu’à la soirée.' },
         { key: 'evenements', title: 'Événements', text: 'Séminaires, inaugurations, spectacles : une couverture photo et vidéo professionnelle.' },
         { key: 'seance', title: 'Séance photo', text: 'Portraits, couples, familles : des séances en extérieur ou en studio, dans une ambiance détendue.' },
         { key: 'drone', title: 'Drone & Vidéo', text: 'Films de mariage, teasers pour les réseaux sociaux et vues aériennes spectaculaires par drone.' },
-        { key: 'ecrivain', title: 'Écrivain public', text: "Rédaction et impression de documents administratifs, CV, lettres, demandes et photos d'identité." },
+        { key: 'idphotos', title: 'Photos d’identité', text: 'Photos scolaires, CIN, passeport, permis de conduire et visas pour tous les pays du monde.' },
+        { key: 'ecrivain', title: 'Écrivain public', text: 'Rédaction et impression de documents administratifs, CV, lettres et demandes.' },
         { key: 'design', title: 'Design print', text: "Designs professionnels sous Photoshop et Illustrator : cartes de visite, affiches et publicités, posters, logos, invitations de mariages et d'événements." },
       ],
     },
     eventTypes: [
-      { key: 'mariage', label: 'Mariage' },
-      { key: 'fiancailles', label: 'Fiançailles' },
-      { key: 'soiree', label: 'Soirée privée' },
+      { key: 'fetes', label: 'Fête / Mariage (fiançailles incluses)' },
       { key: 'evenement', label: 'Événement' },
       { key: 'seance', label: 'Séance photo' },
       { key: 'drone', label: 'Vidéo & Drone' },
+      { key: 'idphotos', label: 'Photos d’identité' },
       { key: 'autre', label: 'Autre' },
     ],
     gallery: {
@@ -468,7 +460,7 @@ export const STRINGS = {
     contact: {
       eyebrow: 'Contact',
       title: 'Parlons de votre projet',
-      zoneDetail: 'Basé à Attaouia, nous nous déplaçons dans tout le Maroc pour vos événements.',
+      zoneDetail: 'Basé au Lotissement Zitoune N° 221, Attaouia — nous nous déplaçons dans tout le Maroc pour vos événements.',
       waHello: 'Bonjour Studio Salhi, je souhaite des informations.',
       cards: [
         { key: 'phone', title: 'Téléphone', cta: 'Appeler' },
