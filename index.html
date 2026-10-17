@@ -2,15 +2,14 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <!-- Thème clair/sombre : appliqué avant le rendu (pas de flash) -->
+    <!-- Thème clair/sombre : appliqué avant le rendu (pas de flash).
+         Défaut : clair (les visiteurs existants gardent leur choix). -->
     <script>
       try {
-        if ((localStorage.getItem('studio-salhi-theme') || 'dark') === 'dark') {
+        if ((localStorage.getItem('studio-salhi-theme') || 'light') === 'dark') {
           document.documentElement.classList.add('dark')
         }
-      } catch (e) {
-        document.documentElement.classList.add('dark')
-      }
+      } catch (e) {}
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>استوديو الصالحي — مصوّر أعراس ومناسبات في المغرب | Studio Salhi</title>
