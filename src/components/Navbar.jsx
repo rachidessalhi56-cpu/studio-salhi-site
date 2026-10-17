@@ -1,9 +1,38 @@
 import { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Sun, Moon } from 'lucide-react'
 import { SITE } from '../data/site.js'
 import { useLang } from '../i18n/LanguageContext.jsx'
 import logoImg from '../assets/logo-b64.js'
+
+const THEME_KEY = 'studio-salhi-theme'
+
+function ThemeToggle() {
+  const { t } = useLang()
+  const [dark, setDark] = useState(
+    () =>
+      typeof document !== 'undefined' &&
+      document.documentElement.classList.contains('dark')
+  )
+  const toggle = () => {
+    const next = !dark
+    setDark(next)
+    document.documentElement.classList.toggle('dark', next)
+    try {
+      localStorage.setItem(THEME_KEY, next ? 'dark' : 'light')
+    } catch (e) {}
+  }
+  return (
+    <button
+      onClick={toggle}
+      aria-label={dark ? t.theme.toLight : t.theme.toDark}
+      title={dark ? t.theme.toLight : t.theme.toDark}
+      className="rounded-full border border-white/15 bg-black/30 p-2 text-gold transition-colors hover:border-gold/50"
+    >
+      {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+    </button>
+  )
+}
 
 function scrollTo(id) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -111,6 +140,9 @@ export default function Navbar() {
             <LangSwitcher />
           </li>
           <li>
+            <ThemeToggle />
+          </li>
+          <li>
             <button
               onClick={() => go('reservation')}
               className="rounded-full bg-gold px-5 py-2.5 text-sm font-bold text-ink transition-transform hover:scale-105"
@@ -122,6 +154,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
           <LangSwitcher />
           <button
             onClick={() => setOpen(!open)}
