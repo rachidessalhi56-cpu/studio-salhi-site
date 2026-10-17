@@ -7,6 +7,7 @@
 export const STRINGS = {
   ar: {
     switcher: { ar: 'عربي', fr: 'FR', aria: 'اللغة' },
+    theme: { toLight: 'التبديل إلى الوضع الفاتح', toDark: 'التبديل إلى الوضع الداكن' },
     nav: {
       home: 'الرئيسية',
       services: 'خدماتنا',
@@ -334,6 +335,7 @@ export const STRINGS = {
 
   fr: {
     switcher: { ar: 'عربي', fr: 'FR', aria: 'Langue' },
+    theme: { toLight: 'Passer en mode clair', toDark: 'Passer en mode sombre' },
     nav: {
       home: 'Accueil',
       services: 'Services',
