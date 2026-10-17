@@ -1,11 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  --color-gold: #c9a227;
-  --color-gold-light: #e6c964;
-  --color-gold-dark: #9a7a1c;
-  --color-ink: #0b0a08;
-  --color-ink-soft: #14120e;
   --font-display: "Playfair Display", "Georgia", serif;
   --font-body: "Manrope", system-ui, -apple-system, sans-serif;
   /* Polices arabes — appliquées automatiquement quand lang="ar" */
@@ -13,13 +8,84 @@
   --font-body-ar: "Cairo", "Tajawal", system-ui, sans-serif;
 }
 
+/* ─────────────────────────────────────────────────────────────
+   THÈMES clair / sombre — les utilitaires (bg-ink, text-stone-…,
+   border-gold, …) restent INCHANGÉS dans les composants : c'est
+   la valeur sous-jacente qui bascule via ces variables.
+   Thème sombre = défaut (classe .dark sur <html>).
+   ───────────────────────────────────────────────────────────── */
+@theme inline {
+  --color-gold: var(--t-gold);
+  --color-gold-light: var(--t-gold-light);
+  --color-gold-dark: var(--t-gold-dark);
+  --color-ink: var(--t-ink);
+  --color-ink-soft: var(--t-ink-soft);
+  --color-white: var(--t-white);
+  --color-black: var(--t-black);
+  --color-stone-50: var(--t-stone-50);
+  --color-stone-100: var(--t-stone-100);
+  --color-stone-200: var(--t-stone-200);
+  --color-stone-300: var(--t-stone-300);
+  --color-stone-400: var(--t-stone-400);
+  --color-stone-500: var(--t-stone-500);
+  --color-stone-600: var(--t-stone-600);
+  --color-stone-700: var(--t-stone-700);
+  --color-stone-800: var(--t-stone-800);
+  --color-stone-900: var(--t-stone-900);
+  --color-stone-950: var(--t-stone-950);
+}
+
+/* Thème CLAIR */
+:root {
+  --t-ink: #f7f3ec;
+  --t-ink-soft: #ffffff;
+  --t-gold: #9a7a1c;
+  --t-gold-light: #c9a227;
+  --t-gold-dark: #7a5f16;
+  --t-white: #1c1917;
+  --t-black: #ffffff;
+  --t-stone-50: #0c0a09;
+  --t-stone-100: #1c1917;
+  --t-stone-200: #292524;
+  --t-stone-300: #44403c;
+  --t-stone-400: #57534e;
+  --t-stone-500: #78716c;
+  --t-stone-600: #a8a29e;
+  --t-stone-700: #d6d3d1;
+  --t-stone-800: #e7e5e4;
+  --t-stone-900: #f5f5f4;
+  --t-stone-950: #fafaf9;
+}
+
+/* Thème SOMBRE (défaut) */
+.dark {
+  --t-ink: #0b0a08;
+  --t-ink-soft: #14120e;
+  --t-gold: #c9a227;
+  --t-gold-light: #e6c964;
+  --t-gold-dark: #9a7a1c;
+  --t-white: #ffffff;
+  --t-black: #000000;
+  --t-stone-50: #fafaf9;
+  --t-stone-100: #f5f5f4;
+  --t-stone-200: #e7e5e4;
+  --t-stone-300: #d6d3d1;
+  --t-stone-400: #a8a29e;
+  --t-stone-500: #78716c;
+  --t-stone-600: #57534e;
+  --t-stone-700: #44403c;
+  --t-stone-800: #292524;
+  --t-stone-900: #1c1917;
+  --t-stone-950: #0c0a09;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--color-ink);
-  color: #e7e5e4;
+  background-color: var(--t-ink);
+  color: var(--t-stone-200);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
 }
@@ -36,12 +102,12 @@ html[lang="ar"] body {
 }
 
 ::selection {
-  background-color: var(--color-gold);
+  background-color: var(--t-gold);
   color: #0b0a08;
 }
 
 /* Fin filet doré sous les titres de section */
 .gold-rule {
-  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  background: linear-gradient(90deg, transparent, var(--t-gold), transparent);
   height: 1px;
 }
